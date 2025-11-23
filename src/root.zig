@@ -1,7 +1,40 @@
 const std = @import("std");
 
-const GGATokenPosition = enum(u32) { gga, time, lat, ns, lon, ew, quality, sats, hdop, alt, alt_unit, geoidal, geoidal_unit, corr_age, corr_sta, checksum };
-const RMCTokenPosition = enum(u32) { rmc, time, status, lat, ns, long, ew, speed, course, date, magvar, magvardir, mode, navstatus, checksum };
+const GGATokenPosition = enum(u32) {
+    gga,
+    time,
+    lat,
+    ns,
+    lon,
+    ew,
+    quality,
+    sats,
+    hdop,
+    alt,
+    alt_unit,
+    geoidal,
+    geoidal_unit,
+    corr_age,
+    corr_sta,
+    checksum,
+};
+const RMCTokenPosition = enum(u32) {
+    rmc,
+    time,
+    status,
+    lat,
+    ns,
+    long,
+    ew,
+    speed,
+    course,
+    date,
+    magvar,
+    magvardir,
+    mode,
+    navstatus,
+    checksum,
+};
 pub const GPSSentence = enum(u32) { gga, rmc, other, invalid };
 
 const GpsError = error{
